@@ -12,8 +12,8 @@ describe('Block Explorer Client', () => {
   it('Should instantiate from options', () => {
 
     const client = BlockExplorerClient.fromOptions({
-      protocol: 'bitcoin',
-      chain: 'main',
+      chain: 'bitcoin',
+      network: 'main',
     });
 
     assert.ok(client);
@@ -21,18 +21,16 @@ describe('Block Explorer Client', () => {
 
   it('Should return transaction urls', () => {
 
-    const chain = 'main';
-    const protocol = 'bitcoin';
+    const network = 'main';
+    const chain = 'bitcoin';
     const txhash = 'foobar';
 
     const client = BlockExplorerClient.fromOptions({
-      protocol,
+      network,
       chain,
     });
 
     const links = client.getTransactionLinks(txhash);
-
-    const suffixes = client.getSuffixes();
 
     for (let link of links)
       assert.equal(link.href.includes(txhash), true, 'it should render with the tx hash');
