@@ -4,8 +4,6 @@ const fetch = require('node-fetch');
 
 import {
   BlockExplorerClient,
-  BLOCK_EXPLORERS,
-  EXPLORER_SUFFIXES,
 } from '../lib/blockExplorerClient.js';
 
 describe('Block Explorer Client', () => {
