@@ -161,8 +161,9 @@ import { BPClient } from '@bpanel/bpanel-utils';
 ```
 
 ##### getClient
-Using `getClient` you can retrieve a global client within your app.
-This ensures that you are querying the same node as other plugins
+Using `getClient` you can retrieve a global instance of BPClient within your app.
+This ensures that you are querying the same node as other plugins. The client returned
+will have all clients and methods available to the parent BPClient class.
 
 
 ```js
