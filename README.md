@@ -143,7 +143,7 @@ import { BPClient } from '@bpanel/bpanel-utils';
   const client = new BPClient({ id: 'test', chain: 'bcoin' });
 
   // get all available clients from your server
-  const clientsObj = await client.getClients();
+  const clients = await client.getClients();
 
   // get default client of server if one is set
   const defaultClient = await client.getDefault();
