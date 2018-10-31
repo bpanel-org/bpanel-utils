@@ -1,5 +1,9 @@
 import { assert } from 'chai';
-import Currency, { CURRENCY_TYPES, CURRENCY_UNITS } from '../lib/currency';
+import Currency, {
+  CURRENCY_TYPES,
+  CURRENCY_UNITS,
+  CHAIN_EXP,
+} from '../lib/currency';
 import { Amount, pkg } from 'hsd';
 
 describe.only('Currency', () => {
@@ -34,6 +38,26 @@ describe.only('Currency', () => {
       assert.equal(currency.getUnit(CURRENCY_TYPES.unit), 'btc');
       assert.equal(currency.getUnit(CURRENCY_TYPES.currency), 'bitcoin');
     });
+  });
+
+  it('should convert to correct milli units', () => {
+    const bitcoinExp = CHAIN_EXP['bitcoin'] - 3;
+    const hnsExp = CHAIN_EXP['handshake'] - 3;
+    assert.equal(
+      bitcoin.toMilli(true),
+      Currency.encode(baseAmt, bitcoinExp, true),
+      'Problem with `toMilli` for bitcoin'
+    );
+    assert.equal(
+      bitcoinCash.toMilli(true),
+      Currency.encode(baseAmt, bitcoinExp, true),
+      'Problem with `toMilli` for bitcoinCash'
+    );
+    assert.equal(
+      handshake.toMilli(true),
+      Currency.encode(baseAmt, hnsExp, true),
+      'Problem with `toMilli` for handshake'
+    );
   });
 
   it('should convert values to and from the correct units', () => {
