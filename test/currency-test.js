@@ -6,7 +6,7 @@ import Currency, {
 } from '../lib/currency';
 import { Amount, pkg } from 'hsd';
 
-describe.only('Currency', () => {
+describe('Currency', () => {
   let bitcoin, bitcoinCash, handshake, baseAmt;
   beforeEach(() => {
     baseAmt = 5;
