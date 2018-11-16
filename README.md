@@ -212,8 +212,6 @@ the browser.
 import { ProxySocket } from '@bpanel/bpanel-utils';
 
 const node = new FullNode({
-      hash: true,
-      query: true,
       prune: true,
       network: 'main',
       memory: false,
@@ -231,7 +229,7 @@ const node = new FullNode({
 ```
 
 Take a look at the bcoin guide to learn more about
-[running a node in the browser](http://bcoin.io/guides/browser.html)
+[running a node in the browser](https://bcoin.io/guides/browser.html)
 
 ## Contribution and License Agreement
 
