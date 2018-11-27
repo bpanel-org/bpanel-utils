@@ -24,6 +24,7 @@
     "webpack": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "bcash": "^1.1.0",
     "bcrypto": "^2.0.0",
     "bcurl": "^0.1.3",
     "bsert": "0.0.4",
